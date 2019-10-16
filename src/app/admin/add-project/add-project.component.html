@@ -1,0 +1,58 @@
+<div id="wrapper">
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <h4 class="text-light p-3">Admin</h4>
+            </li>
+            <li>
+                <a href="#">Project</a>
+            </li>
+            <li>
+                <a href="#">Member</a>
+            </li>
+        </ul>
+    </div>
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 mt-5">
+                    <form>
+                        <div class="form-group">
+                            <label>Name</label><span class="text-danger"> *</span>
+                            <input type="text" class="form-control" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <label>Information</label><span class="text-danger"> *</span>
+                            <textarea class="form-control" placeholder="Information"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>DeadLine</label><span class="text-danger"> *</span>
+                            <input type="datetime-local" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Type</label><span class="text-danger"> *</span>
+                            <select class="form-control">
+                                <option value="1">Lap</option>
+                                <option value="2">Single</option>
+                                <option value="3">Acceptance</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Status</label><span class="text-danger"> *</span>
+                            <select class="form-control">
+                                <option value="1">Planned</option>
+                                <option value="2">Onhold</option>
+                                <option value="3">Doing</option>
+                                <option value="4">Done</option>
+                                <option value="5">Cancelled</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success" style="margin-left: 300px;">Save</button>
+                        </div>
+                    </form>                       
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

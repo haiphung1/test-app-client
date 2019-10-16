@@ -1,0 +1,75 @@
+<div id="wrapper">
+	<div id="sidebar-wrapper">
+		<ul class="sidebar-nav">
+			<li class="sidebar-brand">
+				<h3 class="text-light p-3">Test-App</h3>
+			</li>
+			<li>
+				<a href="#">Project</a>
+			</li>
+			<li>
+				<a href="#">Member</a>
+			</li>
+		</ul>
+	</div>
+	<div id="page-content-wrapper">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-12 mt-5">
+					<a routerLink = "project/add" class="btn btn-success mb-2 text-light">Add project</a>
+					<table class="table">
+						<thead class="thead-dark">
+							<tr>
+								<th scope="col">#</th>
+								<th scope="col" style="width: 150px;">Name</th>
+								<th scope="col" style="width: 300px;">Information</th>
+								<th scope="col">Deadline</th>
+								<th scope="col">Type</th>
+								<th scope="col">Status</th>
+								<th scope="col">Action</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr *ngFor="let projects of project">
+								<th scope="row">{{ projects.id }}</th>
+								<td>
+									<a routerLink="project/detail/{{ projects.id }}">{{ projects.name }}</a>
+								</td>
+								<td>{{ projects.information }}</td>
+								<td>{{ projects.deadline }}</td>
+								<td *ngIf="projects.type === 1">
+									Lap
+								</td>
+								<td *ngIf="projects.type === 2">
+									Single
+								</td>
+								<td *ngIf="projects.type === 3">
+									Acceptance
+								</td>
+								<td *ngIf="projects.status === 1">
+									Planned
+								</td>
+								<td *ngIf="projects.status === 2">
+									Onhold
+								</td>
+								<td *ngIf="projects.status === 3">
+									Doing
+								</td>
+								<td *ngIf="projects.status === 4">
+									Done
+								</td>
+								<td *ngIf="projects.status === 5">
+									Cancelled
+								</td>
+								<td>
+									<a href="#" class="btn btn-info btn-sm">Edit</a>
+									<button class="btn btn-warning ml-1 text-light btn-sm">Delete</button>
+								</td>
+							</tr>							
+						</tbody>
+					</table>					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
