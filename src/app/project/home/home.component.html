@@ -1,0 +1,48 @@
+<mat-card>
+    <span>Quản lí project <a routerLink="#" class="btn btn-success btn-sm">Create project</a></span>
+    <table mat-table [dataSource]="projects" class="mat-elevation-z8">
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>Id.</th>
+            <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+        </ng-container>
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>Name</th>
+            <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+        </ng-container>
+        <ng-container matColumnDef="information">
+            <th mat-header-cell *matHeaderCellDef>Information</th>
+            <td mat-cell *matCellDef="let element">{{ element.information }}</td>
+        </ng-container>
+        <ng-container matColumnDef="deadline">
+            <th mat-header-cell *matHeaderCellDef>Deadline</th>
+            <td mat-cell *matCellDef="let element">{{ element.deadline }}</td>
+        </ng-container>
+        <ng-container matColumnDef="type">
+            <th mat-header-cell *matHeaderCellDef>Type</th>
+            <td mat-cell *matCellDef="let element">
+                <span *ngIf="element.type === 1">Lap</span>
+                <span *ngIf="element.type === 2">Single</span>
+                <span *ngIf="element.type === 3">Acceptance</span>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef>Status</th>
+            <td mat-cell *matCellDef="let element">
+                <span *ngIf="element.status === 1">Planned</span>
+                <span *ngIf="element.status === 2">On hold</span>
+                <span *ngIf="element.status === 3">Doing</span>
+                <span *ngIf="element.status === 4">Done</span>
+                <span *ngIf="element.status === 5">Cancelled</span>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef>Action</th>
+            <td mat-cell *matCellDef="let element">
+                <a routerLink="project/{{ element.id }}/edit" class="btn btn-warning btn-sm text-light">Edit</a>
+                <button type="button" class="btn btn-danger btn-sm ml-2">Delete</button>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+</mat-card>
