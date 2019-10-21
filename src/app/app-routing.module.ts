@@ -4,16 +4,16 @@ import { LayoutComponent } from './layout/layout.component';
 import { HomeComponent } from './project/home/home.component';
 
 const routes: Routes = [
-    {
+  {
+    path : '',
+    component : LayoutComponent,
+    children : [
+      {
         path : '',
-        component : LayoutComponent,
-        children : [
-            {
-                path : '',
-                component : HomeComponent
-            },
-        ],
-    },
+        component : HomeComponent
+      },
+    ],
+  },
 ];
 
 @NgModule({

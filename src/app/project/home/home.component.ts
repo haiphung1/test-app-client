@@ -8,13 +8,13 @@ import { ProjectService } from '../../services/project.service';
 })
 export class HomeComponent implements OnInit {
 
+  constructor(private projectService : ProjectService) { }
+
   displayedColumns: string[] = [
     'id', 'name', 'information', 'deadline', 'type', 'status', 'action'
   ];
   projects = [];
   
-  constructor(private projectService : ProjectService) { }
-
   ngOnInit() {
     this.projectService.getAllProject().subscribe( data => {
       this.projects = data;
